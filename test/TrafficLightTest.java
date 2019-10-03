@@ -8,45 +8,53 @@ public class TrafficLightTest {
     TrafficLight SUT;
 
     @Before
+    //Zo wordt de traffic light opgezet/gegenereed
     public void setup() {
         SUT = new TrafficLight();
     }
 
     @Test
-    public void showTrafficLightRedColor() {
+    //Laat rood licht zien
+    public void showRedColor() {
         String result = SUT.showColor(1);
         assertThat(result, is("Red"));
     }
     @Test
-    public void showTrafficLightOrangeColor() {
+    //Laat rood Oranje zien
+    public void showOrangeColor() {
         String result = SUT.showColor(2);
         assertThat(result, is("Orange"));
     }
     @Test
-    public void showTrafficLightGreenColor() {
+    //Laat rood geel zien
+    public void showGreenColor() {
         String result = SUT.showColor(3);
         assertThat(result, is("Green"));
     }
 
     @Test
-    public void showTrafficLightInvalidNumber() {
+    //Laat zien of het getal invallid is
+    public void showInvalidNumber() {
         String result = SUT.showColor(0);
         assertThat(result, is("Invalid Light Number"));
     }
 
     @Test
-    public void numberIsGreaterThanZero() {
+    //laat zien of het getal grooter is dan 0
+    public void moreThanZero() {
         boolean result = SUT.isPositiveNumber(1);
         assertThat(result, is(true));
     }
 
     @Test
-    public void numberIsZero() {
+    //laat zien dat het getal 0 is
+    public void zero() {
         assertFalse(SUT.isPositiveNumber(0));
     }
 
     @Test
-    public void numberIsLessThanZero() {
+    //laat zien dat het getal kleiner dan 0 is
+    public void LessThanZero() {
         assertFalse(SUT.isPositiveNumber(-1));
     }
 
